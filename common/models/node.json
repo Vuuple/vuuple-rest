@@ -1,0 +1,50 @@
+{
+  "name": "node",
+  "plural": "nodes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "pending"
+    },
+    "port": {
+      "type": "number",
+      "required": true,
+      "default": 21008
+    },
+    "ip": {
+      "type": "string",
+      "required": true
+    },
+    "raftId": {
+      "type": "number"
+    },
+    "enode": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}
